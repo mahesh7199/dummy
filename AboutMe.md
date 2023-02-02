@@ -1,1 +1,1 @@
-I like to do coding and wanted to become expert in software industry
+I like to do CODING and wanted to become EXPERT in Software Industry.
