@@ -27,28 +27,29 @@ function App() {
             </div>
           </div>
       </div>
+      <div className="p-2">
+        <div className="row align-items-center p-2">
+              <div className="col-lg-3">
+                <label className="col-form-label">Enter First Number</label>
+              </div>
+              <div className="col-auto">
+                <input type="number" name='num1' className="form-control" />
+              </div>
+        </div>
+        <div className="row align-items-center p-2">
+              <div className="col-lg-3">
+                <label className="col-form-label">Enter Second Number</label>
+              </div>
+              <div className="col-auto">
+                <input type="number" name='num2' className="form-control" />
+              </div>
+        </div>
 
-      <div className="row align-items-center">
-            <div className="col-lg-3">
-              <label className="col-form-label">Enter First Number</label>
-            </div>
-            <div className="col-auto">
-              <input type="number" name='num1' className="form-control" />
-            </div>
-          </div>
-          <div className="row align-items-center">
-            <div className="col-lg-3">
-              <label className="col-form-label">Enter Second Number</label>
-            </div>
-            <div className="col-auto">
-              <input type="number" name='num2' className="form-control" />
-            </div>
-          </div>
-
-          <button type="button" className="btn btn-primary" >Submit</button>
-          
-          <h3>Your Addition Result(from Server) is:</h3>
-          <h3>Your Addition Result(from ReactJS) is: 0</h3>
+        <button type="button" className="btn btn-primary" >Submit</button>
+        
+        <h3>Your Addition Result(from Server) is:</h3>
+        <h3>Your Addition Result(from ReactJS) is: 0</h3>
+      </div>
     </div>
   );
 }
