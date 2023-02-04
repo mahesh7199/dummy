@@ -44,6 +44,14 @@ function App() {
   const [showInputElement2, setShowInputElement2] = useState(false);
 
 
+  const [no1,setNo1] =useState(); 
+  const [no2,setNo2] =useState();
+  const [sum,setSum] =useState(0);
+
+  const handleClick= (e)=>{
+        setSum(Number(no1)+Number(no2));
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-light bg-light">
@@ -85,7 +93,7 @@ function App() {
                 <label className="col-form-label">Enter First Number</label>
               </div>
               <div className="col-auto">
-                <input type="number" name='num1' className="form-control" />
+                <input type="number" name='num1' className="form-control" onChange={(e)=>{setNo1(e.target.value)}} />
               </div>
         </div>
         <div className="row align-items-center p-2">
@@ -93,14 +101,14 @@ function App() {
                 <label className="col-form-label">Enter Second Number</label>
               </div>
               <div className="col-auto">
-                <input type="number" name='num2' className="form-control" />
+                <input type="number" name='num2' className="form-control" onChange={(e)=>{setNo2(e.target.value)}}  />
               </div>
         </div>
 
-        <button type="button" className="btn btn-primary" >Submit</button>
+        <button type="button" className="btn btn-primary" onClick={handleClick} >Submit</button>
         
         <h3>Your Addition Result(from Server) is:</h3>
-        <h3>Your Addition Result(from ReactJS) is: 0</h3>
+        <h3>Your Addition Result(from ReactJS) is: {sum}</h3>
       </div>
     </div>
   );
