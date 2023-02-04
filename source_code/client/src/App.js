@@ -3,7 +3,47 @@ import image from './profile.png'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+import {useState} from 'react'
+
+function Editable(props) {
+  return (
+    <span>
+      {
+        props.showInputElement ? (
+          <input 
+            type="text"
+            value={props.value}
+            onChange={props.handleChange}
+            onBlur={props.handleBlur}
+            autoFocus
+          />
+        ) : (
+          <span 
+            onDoubleClick={props.handleDoubleClick}
+            style={{ 
+              display: "inline-block", 
+              height: "25px", 
+              minWidth: "300px", 
+            }}a
+          >
+            {props.value}
+          </span>
+        )
+      }
+    </span>
+  );
+}
+
 function App() {
+
+
+  const [Name, setName] = useState("James Smith");
+  const [description , setDescription] = useState("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.");
+  
+  const [showInputElement, setShowInputElement] = useState(false);
+  const [showInputElement2, setShowInputElement2] = useState(false);
+
+
   return (
     <div className="App">
       <nav className="navbar navbar-light bg-light">
@@ -22,8 +62,20 @@ function App() {
             <img src={image} width="300" height="300" className="d-inline-block align-text-top"/>
             </div>
             <div className="col p-10 g-4">
-              <h3>Mahesh</h3>
-              Creating website
+              <h3><Editable
+            value={Name}
+            handleChange={(e) => setName(e.target.value)}  
+            handleDoubleClick={() => setShowInputElement(true)} 
+            handleBlur={() => setShowInputElement(false)}         
+            showInputElement={showInputElement}
+          /></h3>
+               <Editable
+            value={description}
+            handleChange={(f) => setDescription(f.target.value)}  
+            handleDoubleClick={() => setShowInputElement2(true)} 
+            handleBlur={() => setShowInputElement2(false)}         
+            showInputElement={showInputElement2}
+          />
             </div>
           </div>
       </div>
