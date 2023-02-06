@@ -48,8 +48,18 @@ function App() {
   const [no2,setNo2] =useState();
   const [sum,setSum] =useState(0);
 
+  const [servsum,setServSum] =useState('');
+
   const handleClick= (e)=>{
         setSum(Number(no1)+Number(no2));
+
+  fetch("http://localhost:3001/"+no1+"/plus/"+no2).then(
+      response => response.text()
+    ).then(
+      data=>{
+        setServSum(data)
+      }
+    )
   }
 
   return (
@@ -107,7 +117,7 @@ function App() {
 
         <button type="button" className="btn btn-primary" onClick={handleClick} >Submit</button>
         
-        <h3>Your Addition Result(from Server) is:</h3>
+        <h3>Your Addition Result(from Server) is:{servsum}</h3>
         <h3>Your Addition Result(from ReactJS) is: {sum}</h3>
       </div>
     </div>

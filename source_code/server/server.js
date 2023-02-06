@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express()
 
+
+var cors =require('cors')
+
+app.use(cors());
+
 app.listen(3001)
 
 app.get('/',(req,res)=>{
