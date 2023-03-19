@@ -77,7 +77,7 @@ function App() {
           <div className="row">
 
             <div className="col col-md-auto ">
-            <img src={image} width="300" height="300" className="d-inline-block align-text-top"/>
+            <img src={image} width="301" height="300" className="d-inline-block align-text-top"/>
             </div>
             <div className="col p-10 g-4">
               <h3><Editable
